@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 2rem;
+  margin: 0;
+
+  &__heading {
+    font-size: 5em;
+    letter-spacing: -0.125rem;
+    border-bottom: 0.125rem solid black;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 36rem) {
+    margin: 2rem 0;
+    height: 100%;
+
+    &__heading {
+      font-size: 2.5rem;
+    }
+  }
+}

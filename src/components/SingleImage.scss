@@ -1,0 +1,15 @@
+$white: #FFF;
+$gray: #CCC;
+
+.single-image {
+  img {
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    border:2px solid $white;
+    box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
+    -moz-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
+    -webkit-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
+    -khtml-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
+  }
+}
