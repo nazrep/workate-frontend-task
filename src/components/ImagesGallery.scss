@@ -1,4 +1,5 @@
 $darkgray: #41403e;
+$white: #fff;
 
 .images-gallery {
   display: flex;
@@ -15,7 +16,7 @@ $darkgray: #41403e;
 
   &__button {
     align-self: center;
-    background-color: #fff;
+    background-color: $white;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -38,7 +39,6 @@ $darkgray: #41403e;
     border-top-left-radius: 16rem 1rem;
     border-top-right-radius: 1rem 14rem;
     user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
     margin: 0 0 1rem;
 
