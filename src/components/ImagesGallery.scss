@@ -4,11 +4,13 @@ $darkgray: #41403e;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-x: auto;
+  max-height: 100%;
 
   &__container {
     display: flex;
     gap: 2rem;
-    max-width: 64rem;
+    max-width: 64.5rem;
   }
 
   &__button {
@@ -38,6 +40,7 @@ $darkgray: #41403e;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin: 0 0 1rem;
 
     &:hover {
       box-shadow: rgba(0, 0, 0, .3) 0.125rem 0.5rem 0.5rem -0.9.375rem;
@@ -47,11 +50,24 @@ $darkgray: #41403e;
     &:focus {
       box-shadow: rgba(0, 0, 0, .3) 0.125rem 0.5rem 0.25rem -0.9.375rem;
     }
+
+    &--disabled {
+      opacity: 0.8;
+      pointer-events: none;
+    }
   }
 
-  @media screen and (max-width: 36rem) {
+  @media screen and (max-width: 62rem) {
+    overflow: hidden;
+    height: 70rem;
+
     &__container {
       flex-direction: column;
+    }
+
+    &__button {
+      position: fixed;
+      bottom: 1rem;
     }
   }
 }

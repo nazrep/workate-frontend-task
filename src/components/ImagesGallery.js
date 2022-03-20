@@ -1,29 +1,44 @@
-import {useState} from 'react';
-import './ImagesGallery.scss'
+import {useCallback, useState} from 'react';
+import {useWindowSize} from '../hooks/getWindowSize';
 import SingleImage from './SingleImage';
+import './ImagesGallery.scss'
 
 export const ImagesGallery = ({images}) => {
     const DEFAULT_IMAGE_LIMIT = 3;
+    const IMAGE_WIDTH_WITH_GAP = 22;
     const [imageLimit, setImageLimit] = useState(DEFAULT_IMAGE_LIMIT)
+    const {height, width} = useWindowSize();
+    const LG_BREAKPOINT = 992;
+    const isMobile = width <= LG_BREAKPOINT;
 
-    const showNextImages = () => {
+    const showNextImages = useCallback(() => {
+        setImageLimit(prevState => prevState + DEFAULT_IMAGE_LIMIT)
         if(imageLimit === images.length) {
             resetLimit()
         }
-
-        setImageLimit(prevState => prevState + DEFAULT_IMAGE_LIMIT)
-    }
+        }, [imageLimit, images.length])
 
     const resetLimit = () => {
         setImageLimit(DEFAULT_IMAGE_LIMIT)
     }
 
+    const getTranslateAnimation = () => {
+        if(isMobile) {
+            return `translate(0, -${IMAGE_WIDTH_WITH_GAP * (imageLimit - DEFAULT_IMAGE_LIMIT) }rem)`
+        }
+
+        return `translate(-${IMAGE_WIDTH_WITH_GAP * (imageLimit - DEFAULT_IMAGE_LIMIT) }rem, 0)`
+    }
+
     return (
         <div className="images-gallery">
-            <div className="images-gallery__container">
-                {images.slice(imageLimit - DEFAULT_IMAGE_LIMIT, imageLimit).map((image, index) => {
+            <div
+                className="images-gallery__container"
+                 style={{transform: getTranslateAnimation()}}
+            >
+                {images.slice(0, imageLimit).map((image, index) => {
                     return (
-                        <SingleImage key={index} image={image} />
+                        <SingleImage key={index} url={image.download_url} />
                     )
                 })}
             </div>

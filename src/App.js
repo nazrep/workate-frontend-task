@@ -31,7 +31,9 @@ export const App = () => {
   return (
     <div className="app">
         <h1 className="app__heading">Images Gallery</h1>
-        <ImagesGallery images={data} />
+        <div className="app__gallery">
+            <ImagesGallery images={data} />
+        </div>
     </div>
   );
 }

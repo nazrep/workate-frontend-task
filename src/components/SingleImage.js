@@ -1,9 +1,9 @@
 import  './SingleImage.scss'
 
-export const ImagesGallery = ({image}) => {
+export const ImagesGallery = ({url}) => {
     return (
         <div className="single-image">
-            <img src={image.download_url} alt="" />
+            <img src={url} alt="" />
         </div>
     );
 }
