@@ -7,9 +7,9 @@ export const ImagesGallery = ({images}) => {
     const DEFAULT_IMAGE_LIMIT = 3;
     const IMAGE_WIDTH_WITH_GAP = 22;
     const [imageLimit, setImageLimit] = useState(DEFAULT_IMAGE_LIMIT)
-    const {height, width} = useWindowSize();
+    const windowSize = useWindowSize();
     const LG_BREAKPOINT = 992;
-    const isMobile = width <= LG_BREAKPOINT;
+    const isMobile = windowSize.width <= LG_BREAKPOINT;
 
     const showNextImages = useCallback(() => {
         setImageLimit(prevState => prevState + DEFAULT_IMAGE_LIMIT)
