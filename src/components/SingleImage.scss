@@ -12,4 +12,8 @@ $gray: #CCC;
     -webkit-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
     -khtml-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
   }
+
+  &:last-of-type {
+    margin-right: 2rem;
+  }
 }
