@@ -36,9 +36,9 @@ export const ImagesGallery = ({images}) => {
                 className="images-gallery__container"
                  style={{transform: getTranslateAnimation()}}
             >
-                {images.slice(0, imageLimit).map((image, index) => {
+                {images.slice(0, imageLimit).map(({id, download_url, author}) => {
                     return (
-                        <SingleImage key={index} url={image.download_url} />
+                        <SingleImage key={id} url={download_url} author={author} />
                     )
                 })}
             </div>
