@@ -40,7 +40,7 @@ $white: #fff;
     border-top-right-radius: 1rem 14rem;
     user-select: none;
     touch-action: manipulation;
-    margin: 0 0 1rem;
+    margin: 0 0 3rem;
 
     &:hover {
       box-shadow: rgba(0, 0, 0, .3) 0.125rem 0.5rem 0.5rem -0.9.375rem;
@@ -68,6 +68,7 @@ $white: #fff;
     &__button {
       position: fixed;
       bottom: 1rem;
+      margin: 0 0 1rem;
     }
   }
 }

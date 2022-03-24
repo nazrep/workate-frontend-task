@@ -6,6 +6,7 @@ $gray: #CCC;
     height: 20rem;
     width: 20rem;
     display: flex;
+    margin: 0 auto;
     border:2px solid $white;
     box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
     -moz-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
@@ -13,7 +14,9 @@ $gray: #CCC;
     -khtml-box-shadow: 0.625rem 0.625rem 0.3125rem $gray;
   }
 
-  &:last-of-type {
-    margin-right: 2rem;
+  @media screen and (min-width: 62rem) {
+    img &:last-of-type {
+      margin-right: 2rem;
+    }
   }
 }
